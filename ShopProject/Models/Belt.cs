@@ -9,6 +9,7 @@ namespace ShopProject.Models
     public class Belt : Product
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int CapId { get; set; }
 
     }

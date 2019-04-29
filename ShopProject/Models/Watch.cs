@@ -9,6 +9,7 @@ namespace ShopProject.Models
     public class Watch : Product
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int WatchId { get; set; }
     }
 }
