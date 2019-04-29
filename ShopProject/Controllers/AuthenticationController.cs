@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShopProject.Models;
+using ShopProject.BL;
+using ShopProject.ViewModel;
 
 namespace ShopProject.Controllers
 {
