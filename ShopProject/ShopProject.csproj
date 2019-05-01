@@ -154,7 +154,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CapController.cs" />
     <Compile Include="Controllers\WatchController.cs" />
+    <Compile Include="DAL\DAL_Belt.cs" />
+    <Compile Include="DAL\DAL_Cap.cs" />
     <Compile Include="DAL\DAL_User.cs" />
+    <Compile Include="DAL\DAL_Watch.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
