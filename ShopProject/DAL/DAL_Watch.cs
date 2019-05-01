@@ -16,7 +16,7 @@ namespace ShopProject.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Watch>().ToTable("Tbl_Belts");
+            modelBuilder.Entity<Watch>().ToTable("Tbl_Watches");
             modelBuilder.Entity<Watch>().Property(p => p.ProductImage).HasColumnType("image");
             base.OnModelCreating(modelBuilder);
         }
