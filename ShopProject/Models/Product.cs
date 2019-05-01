@@ -20,6 +20,9 @@ namespace ShopProject.Models
         [Required(ErrorMessage = "Musisz podać Opis!")]
         public virtual string Description { get; set; }
 
+        [Display(Name="Zdjęcie")]
+        [Required(ErrorMessage ="Musisz dodać zdjęcie")]
+        public byte[] ProductImage { get; set; }
 
 
     }
