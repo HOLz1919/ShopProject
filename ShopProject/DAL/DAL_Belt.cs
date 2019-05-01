@@ -17,7 +17,7 @@ namespace ShopProject.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Belt>().ToTable("Tbl_Belts");
-            modelBuilder.Entity<Belt>().Property(p => p.ProductImage).HasColumnType("image");
+            Database.SetInitializer<DbContext>(null);
             base.OnModelCreating(modelBuilder);
         }
 

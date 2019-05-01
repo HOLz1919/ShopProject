@@ -165,13 +165,9 @@
     <Compile Include="Handler.ashx.cs">
       <DependentUpon>Handler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905011245449_Migracja1.cs" />
-    <Compile Include="Migrations\201905011245449_Migracja1.Designer.cs">
-      <DependentUpon>201905011245449_Migracja1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905011247208_Migracja2.cs" />
-    <Compile Include="Migrations\201905011247208_Migracja2.Designer.cs">
-      <DependentUpon>201905011247208_Migracja2.cs</DependentUpon>
+    <Compile Include="Migrations\201905011312454_Migracja1.cs" />
+    <Compile Include="Migrations\201905011312454_Migracja1.Designer.cs">
+      <DependentUpon>201905011312454_Migracja1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Belt.cs" />
@@ -245,11 +241,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905011245449_Migracja1.resx">
-      <DependentUpon>201905011245449_Migracja1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905011247208_Migracja2.resx">
-      <DependentUpon>201905011247208_Migracja2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905011312454_Migracja1.resx">
+      <DependentUpon>201905011312454_Migracja1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

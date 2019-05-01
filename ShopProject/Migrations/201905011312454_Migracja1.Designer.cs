@@ -13,12 +13,12 @@ namespace ShopProject.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201905011245449_Migracja1"; }
+            get { return "201905011312454_Migracja1"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

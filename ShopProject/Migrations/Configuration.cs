@@ -9,7 +9,7 @@ namespace ShopProject.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(ShopProject.DAL.DAL_User context)
