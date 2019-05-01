@@ -21,7 +21,6 @@ namespace ShopProject.Models
         public virtual string Description { get; set; }
 
         [Display(Name="Zdjęcie")]
-        [Required(ErrorMessage ="Musisz dodać zdjęcie")]
         public byte[] ProductImage { get; set; }
 
 

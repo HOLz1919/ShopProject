@@ -31,5 +31,11 @@ namespace ShopProject.DAL
 
         }
 
+        public void AddBelt(Belt belt)
+        {
+            BeltsDB.Add(belt);
+            SaveChanges();
+        }
+
     }
 }

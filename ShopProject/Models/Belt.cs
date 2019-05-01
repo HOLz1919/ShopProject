@@ -10,7 +10,7 @@ namespace ShopProject.Models
     {
         [Key]
         [ScaffoldColumn(false)]
-        public int CapId { get; set; }
+        public int BeltId { get; set; }
 
     }
 }

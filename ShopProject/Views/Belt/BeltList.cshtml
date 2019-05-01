@@ -1,0 +1,39 @@
+﻿@using ShopProject.ViewModel
+
+@model BeltListVM
+
+@{
+    ViewBag.Title = "BeltList";
+}
+
+<h2>BeltList</h2>
+
+
+
+<div>
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(model => Model.BeltVMList[0].belt.BeltId)</th>
+            <th>@Html.DisplayNameFor(model => Model.BeltVMList[0].belt.Name)</th>
+            <th>@Html.DisplayNameFor(model => Model.BeltVMList[0].belt.Cost)</th>
+            <th>@Html.DisplayNameFor(model => Model.BeltVMList[0].belt.Description)</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+
+
+        @foreach (BeltVM item in Model.BeltVMList)
+    {
+        <tr>
+            <td>@item.belt.BeltId</td>
+            <td>@item.belt.Name</td>
+            <td>@item.belt.Cost</td>
+            <td>@item.belt.Description</td>
+            <td>@Html.ActionLink("Edytuj", "Edit", new { id = item.belt.BeltId })</td>
+            <td>@Html.ActionLink("Usuń", "Delete", new { id = item.belt.BeltId })</td>
+        </tr>
+}
+    </table>
+</div>
+

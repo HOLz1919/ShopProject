@@ -14,7 +14,12 @@ namespace ShopProject.Controllers
         // GET: Belt
         public ActionResult BeltList()
         {
-            return View();
+            BeltListVM beltListVM = new BeltListVM();
+            BeltBL beltBL = new BeltBL();
+            List<Belt> beltList = new List<Belt>();
+            beltListVM.BeltVMList = BeltList2BeltVMList(beltBL.GetBeltList());
+
+            return View(beltListVM);
         }
 
 
@@ -31,13 +36,21 @@ namespace ShopProject.Controllers
 
 
         [HttpPost]
-        public ActionResult AddBelt(FormCollection collection)
+        public ActionResult AddBelt(Belt belt)
         {
             try
             {
-                // TODO: Add insert logic here
+                if(!ModelState.IsValid)
+                {
+                    return View("AddBelt", belt);
+                }
 
-                return RedirectToAction("Index");
+                else
+                {
+                    BeltBL beltBL = new BeltBL();
+                    beltBL.AddBelt(belt);
+                    return RedirectToAction("BeltList");
+                }
             }
             catch
             {
@@ -87,6 +100,22 @@ namespace ShopProject.Controllers
             {
                 return View();
             }
+        }
+
+
+
+        private List<BeltVM> BeltList2BeltVMList(List<Belt> beltList)
+        {
+            List<BeltVM> BeltVMList = new List<BeltVM>();
+
+            foreach (Belt belt in beltList)
+            {
+                BeltVM beltVM = new BeltVM();
+                beltVM.belt = belt;
+                BeltVMList.Add(beltVM);
+            }
+
+            return BeltVMList;
         }
     }
 }
