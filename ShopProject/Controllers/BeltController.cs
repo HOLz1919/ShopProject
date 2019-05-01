@@ -59,7 +59,7 @@ namespace ShopProject.Controllers
         }
 
 
-        public ActionResult EditBelt(int id)
+        public ActionResult EditBelt()
         {
             return View();
         }
@@ -81,7 +81,7 @@ namespace ShopProject.Controllers
         }
 
 
-        public ActionResult DeleteBelt(int id)
+        public ActionResult DeleteBelt()
         {
             return View();
         }

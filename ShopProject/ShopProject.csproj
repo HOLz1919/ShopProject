@@ -180,6 +180,8 @@
     <Compile Include="ViewModel\BeltListVM.cs" />
     <Compile Include="ViewModel\BeltVM.cs" />
     <Compile Include="ViewModel\CreateUserVM.cs" />
+    <Compile Include="ViewModel\DeleteBeltVM.cs" />
+    <Compile Include="ViewModel\EditBeltVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

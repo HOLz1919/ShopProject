@@ -21,6 +21,19 @@ namespace ShopProject.BL
             DAL_Belt.AddBelt(belt);
         }
 
+        public void DeleteBelt(int id)
+        {
+            DAL_Belt DAL_Belt = new DAL_Belt();
+            DAL_Belt.DeleteBelt(id);
+        }
+        
+        public void EditBelt(int id, string name, int cost, string description)
+        {
+            DAL_Belt DAL_Belt = new DAL_Belt();
+            DAL_Belt.EditBelt(id, name, cost, description);
+        }
+
+
 
     }
 }

@@ -37,5 +37,24 @@ namespace ShopProject.DAL
             SaveChanges();
         }
 
+        public void DeleteBelt(int id)
+        {
+            Belt belt = new Belt();
+            BeltsDB.Remove(BeltsDB.Find(id));
+            SaveChanges();
+        }
+
+        public void EditBelt(int id, string name, int cost, string description)
+        {
+            Belt belt = BeltsDB.FirstOrDefault(b => b.BeltId == id);
+            if(belt!=null)
+            {
+                belt.Name = name;
+                belt.Cost = cost;
+                belt.Description = description;
+                SaveChanges();
+            }
+        }
+
     }
 }
