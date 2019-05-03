@@ -31,6 +31,32 @@ namespace ShopProject.DAL
 
         }
 
+        public void AddCap(Cap cap)
+        {
+            CapDB.Add(cap);
+            SaveChanges();
+        }
+
+        public void DeleteCap(int id)
+        {
+            Cap cap = new Cap();
+            CapDB.Remove(CapDB.Find(id));
+            SaveChanges();
+        }
+
+        public void EditCap(int id, string name, int cost, string description)
+        {
+            Cap cap = CapDB.FirstOrDefault(c => c.CapId == id);
+            if (cap != null)
+            {
+                cap.CapId = id;
+                cap.Name = name;
+                cap.Cost = cost;
+                cap.Description = description;
+                SaveChanges();
+            }
+        }
+
 
 
     }

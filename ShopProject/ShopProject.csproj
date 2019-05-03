@@ -149,7 +149,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BL\BeltBL.cs" />
+    <Compile Include="BL\CapBL.cs" />
     <Compile Include="BL\UserBL.cs" />
+    <Compile Include="BL\WatchBL.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BeltController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -179,9 +181,13 @@
     <Compile Include="ViewModel\AddBeltVM.cs" />
     <Compile Include="ViewModel\BeltListVM.cs" />
     <Compile Include="ViewModel\BeltVM.cs" />
+    <Compile Include="ViewModel\CapListVM.cs" />
+    <Compile Include="ViewModel\CapVM.cs" />
     <Compile Include="ViewModel\CreateUserVM.cs" />
     <Compile Include="ViewModel\DeleteBeltVM.cs" />
     <Compile Include="ViewModel\EditBeltVM.cs" />
+    <Compile Include="ViewModel\WatchListVM.cs" />
+    <Compile Include="ViewModel\WatchVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
