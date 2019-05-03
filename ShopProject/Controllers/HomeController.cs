@@ -31,15 +31,28 @@ namespace ShopProject.Controllers
         public ActionResult WatchList()
         {
             WatchListVM watchListVM = new WatchListVM();
+            WatchBL watchBL = new WatchBL();
+            List<Watch> watchList = new List<Watch>();
+            watchListVM.WatchVMList = WatchList2WatchVMList(watchBL.GetWatchList());
 
-
-            return View();
+            return View(watchListVM);
         }
 
 
         public ActionResult CapList()
         {
-           
+            CapListVM capListVM = new CapListVM();
+            CapBL capBL = new CapBL();
+            List<Cap> capList = new List<Cap>();
+            capListVM.CapVMList = CapList2CapVMList(capBL.GetCapList());
+
+            return View(capListVM) ;
+        }
+
+        public ActionResult SchoppingCart()
+        {
+
+
 
             return View();
         }
