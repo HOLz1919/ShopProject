@@ -49,6 +49,7 @@ namespace ShopProject.DAL
             Belt belt = BeltsDB.FirstOrDefault(b => b.BeltId == id);
             if(belt!=null)
             {
+                belt.BeltId = id;
                 belt.Name = name;
                 belt.Cost = cost;
                 belt.Description = description;

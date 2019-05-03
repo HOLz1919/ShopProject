@@ -31,7 +31,8 @@ namespace ShopProject.Controllers
 
         public ActionResult AddBelt()
         {
-            return View();
+            AddBeltVM addBeltVM = new AddBeltVM();
+            return View(addBeltVM);
         }
 
 
@@ -58,21 +59,24 @@ namespace ShopProject.Controllers
             }
         }
 
-
+        [HttpGet]
         public ActionResult EditBelt()
         {
+            Belt belt = new Belt();
             return View();
         }
 
 
         [HttpPost]
-        public ActionResult EditBelt(int id, FormCollection collection)
+        public ActionResult EditBelt(Belt belt)
         {
+            
             try
             {
-                // TODO: Add update logic here
+                BeltBL beltBL = new BeltBL();
+                beltBL.EditBelt(belt.BeltId, belt.Name,belt.Cost,belt.Description);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("BeltList");
             }
             catch
             {
@@ -83,18 +87,20 @@ namespace ShopProject.Controllers
 
         public ActionResult DeleteBelt()
         {
+            
             return View();
         }
 
 
         [HttpPost]
-        public ActionResult DeleteBelt(int id, FormCollection collection)
+        public ActionResult DeleteBelt(Belt belt)
         {
             try
             {
-                // TODO: Add delete logic here
+                BeltBL beltBL = new BeltBL();
+                beltBL.DeleteBelt(belt.BeltId);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("BeltList");
             }
             catch
             {

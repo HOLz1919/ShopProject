@@ -24,16 +24,17 @@
 
 
         @foreach (BeltVM item in Model.BeltVMList)
-    {
+        {
         <tr>
             <td>@item.belt.BeltId</td>
             <td>@item.belt.Name</td>
             <td>@item.belt.Cost</td>
             <td>@item.belt.Description</td>
-            <td>@Html.ActionLink("Edytuj", "Edit", new { id = item.belt.BeltId })</td>
-            <td>@Html.ActionLink("Usuń", "Delete", new { id = item.belt.BeltId })</td>
+            <td>@Html.ActionLink("Edytuj", "EditBelt", item.belt)</td>
+            <td>@Html.ActionLink("Usuń", "DeleteBelt", item.belt)</td>
         </tr>
 }
+
     </table>
 </div>
 
