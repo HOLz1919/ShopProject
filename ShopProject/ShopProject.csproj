@@ -228,12 +228,12 @@
     <Content Include="Views\Belt\AddBelt.cshtml" />
     <Content Include="Views\Belt\EditBelt.cshtml" />
     <Content Include="Views\Belt\DeleteBelt.cshtml" />
+    <Content Include="Views\Home\BeltList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Views\Authentication\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="Views\Watch\" />
   </ItemGroup>
   <ItemGroup>

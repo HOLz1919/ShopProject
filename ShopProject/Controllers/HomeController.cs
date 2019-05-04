@@ -49,6 +49,8 @@ namespace ShopProject.Controllers
             return View(capListVM) ;
         }
 
+        // Koszyk ----------------------------------------------
+
         public ActionResult SchoppingCart()
         {
 
@@ -57,6 +59,43 @@ namespace ShopProject.Controllers
             return View();
         }
 
+
+        public List<Object> GetShoppingList()
+        {
+            List<Object> shoppingList;
+            if (Session["ShoppingList"] == null)
+            {
+                shoppingList = new List<Object>();
+
+            }
+            else
+            {
+                shoppingList = (List<Object>)Session["ShoppingList"];
+            }
+            return shoppingList;
+        }
+
+        public void SaveShoppingList(List<Object> shoppingList)
+        {
+            Session["ShoppingList"] = shoppingList;
+        }
+
+        public void AddItem(Object o)
+        {
+            List<Object> shoppingList = GetShoppingList();
+            shoppingList.Add(o);
+            SaveShoppingList(shoppingList);
+        }
+
+        public void RemoveItem(Object o)
+        {
+            List<Object> shoppingList = GetShoppingList();
+            shoppingList.Remove(o);
+            SaveShoppingList(shoppingList);
+        }
+
+
+        //--------------------------------------------
 
 
 
