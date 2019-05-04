@@ -13,7 +13,12 @@ namespace ShopProject.Controllers
     {
         public ActionResult WatchList()
         {
-            return View();
+            WatchListVM watchListVM = new WatchListVM();
+            WatchBL watchBL = new WatchBL();
+            List<Watch> watchList = new List<Watch>();
+            watchListVM.WatchVMList = WatchList2WatchVMList(watchBL.GetWatchList());
+
+            return View(watchListVM);
         }
 
 
@@ -25,18 +30,75 @@ namespace ShopProject.Controllers
 
         public ActionResult AddWatch()
         {
+            AddWatchVM addWatchVM = new AddWatchVM();
+            return View(addWatchVM);
+        }
+
+
+        [HttpPost]
+        public ActionResult AddWatch(Watch watch)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View("AddWatch", watch);
+                }
+
+                else
+                {
+                    WatchBL watchBL = new WatchBL();
+                    watchBL.AddWatch(watch);
+                    return RedirectToAction("WatchList");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public ActionResult EditWatch()
+        {
+            Watch watch = new Watch();
             return View();
         }
 
 
         [HttpPost]
-        public ActionResult AddWatch(FormCollection collection)
+        public ActionResult EditWatch(Watch watch)
+        {
+
+            try
+            {
+                WatchBL watchBL = new WatchBL();
+                watchBL.EditWatch(watch.WatchId, watch.Name, watch.Cost, watch.Description);
+
+                return RedirectToAction("WatchList");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult DeleteWatch()
+        {
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult DeleteWatch(Watch watch)
         {
             try
             {
-                // TODO: Add insert logic here
+                WatchBL watchBL = new WatchBL();
+                watchBL.DeleteWatch(watch.WatchId);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("WatchList");
             }
             catch
             {
@@ -45,47 +107,19 @@ namespace ShopProject.Controllers
         }
 
 
-        public ActionResult EditWatch(int id)
+
+        private List<WatchVM> WatchList2WatchVMList(List<Watch> watchList)
         {
-            return View();
-        }
+            List<WatchVM> WatchVMList = new List<WatchVM>();
 
-
-        [HttpPost]
-        public ActionResult EditWatch(int id, FormCollection collection)
-        {
-            try
+            foreach (Watch watch in watchList)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                WatchVM watchVM = new WatchVM();
+                watchVM.watch = watch;
+                WatchVMList.Add(watchVM);
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-
-        public ActionResult DeleteWatch(int id)
-        {
-            return View();
-        }
-
-
-        [HttpPost]
-        public ActionResult DeleteWatch(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return WatchVMList;
         }
     }
 }

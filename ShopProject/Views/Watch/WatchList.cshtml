@@ -1,0 +1,37 @@
+﻿@using ShopProject.ViewModel
+
+@model WatchListVM
+
+@{
+    ViewBag.Title = "WatchList";
+}
+
+<h2>WatchList</h2>
+
+<div>
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(model => Model.WatchVMList[0].watch.WatchId)</th>
+            <th>@Html.DisplayNameFor(model => Model.WatchVMList[0].watch.Name)</th>
+            <th>@Html.DisplayNameFor(model => Model.WatchVMList[0].watch.Cost)</th>
+            <th>@Html.DisplayNameFor(model => Model.WatchVMList[0].watch.Description)</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+
+
+        @foreach (WatchVM item in Model.WatchVMList)
+        {
+            <tr>
+                <td>@item.watch.WatchId</td>
+                <td>@item.watch.Name</td>
+                <td>@item.watch.Cost</td>
+                <td>@item.watch.Description</td>
+                <td>@Html.ActionLink("Edytuj", "EditWatch", item.watch)</td>
+                <td>@Html.ActionLink("Usuń", "DeleteWatch", item.watch)</td>
+            </tr>
+        }
+
+    </table>
+</div>

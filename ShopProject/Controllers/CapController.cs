@@ -13,7 +13,7 @@ namespace ShopProject.Controllers
     {
         public ActionResult CapList()
         {
-            CapListVM capListVM = new BeltListVM();
+            CapListVM capListVM = new CapListVM();
             CapBL capBL = new CapBL();
             List<Cap> capList = new List<Cap>();
             capListVM.CapVMList = CapList2CapVMList(capBL.GetCapList());
@@ -30,26 +30,26 @@ namespace ShopProject.Controllers
 
         public ActionResult AddCap()
         {
-            AddCapVM addBeltVM = new AddBeltVM();
-            return View(addBeltVM);
+            AddCapVM addCapVM = new AddCapVM();
+            return View(addCapVM);
         }
 
 
         [HttpPost]
-        public ActionResult AddCap(Belt belt)
+        public ActionResult AddCap(Cap cap)
         {
             try
             {
                 if (!ModelState.IsValid)
                 {
-                    return View("AddBelt", belt);
+                    return View("AddCap", cap);
                 }
 
                 else
                 {
-                    BeltBL beltBL = new BeltBL();
-                    beltBL.AddBelt(belt);
-                    return RedirectToAction("BeltList");
+                    CapBL capBL = new CapBL();
+                    capBL.AddCap(cap);
+                    return RedirectToAction("CapList");
                 }
             }
             catch
@@ -61,21 +61,21 @@ namespace ShopProject.Controllers
         [HttpGet]
         public ActionResult EditCap()
         {
-            Belt belt = new Belt();
+            Cap cap = new Cap();
             return View();
         }
 
 
         [HttpPost]
-        public ActionResult EditCap(Belt belt)
+        public ActionResult EditCap(Cap cap)
         {
 
             try
             {
-                BeltBL beltBL = new BeltBL();
-                beltBL.EditBelt(belt.BeltId, belt.Name, belt.Cost, belt.Description);
+                CapBL capBL = new CapBL();
+                capBL.EditCap(cap.CapId, cap.Name, cap.Cost, cap.Description);
 
-                return RedirectToAction("BeltList");
+                return RedirectToAction("CapList");
             }
             catch
             {
@@ -92,14 +92,14 @@ namespace ShopProject.Controllers
 
 
         [HttpPost]
-        public ActionResult DeleteCap(Belt belt)
+        public ActionResult DeleteCap(Cap cap)
         {
             try
             {
-                BeltBL beltBL = new BeltBL();
-                beltBL.DeleteBelt(belt.BeltId);
+                CapBL capBL = new CapBL();
+                capBL.DeleteCap(cap.CapId);
 
-                return RedirectToAction("BeltList");
+                return RedirectToAction("CapList");
             }
             catch
             {

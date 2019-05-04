@@ -235,12 +235,21 @@
     <Content Include="Views\Belt\EditBelt.cshtml" />
     <Content Include="Views\Belt\DeleteBelt.cshtml" />
     <Content Include="Views\Home\BeltList.cshtml" />
+    <Content Include="Views\Watch\WatchList.cshtml" />
+    <Content Include="Views\Watch\AddWatch.cshtml" />
+    <Content Include="Views\Watch\EditWatch.cshtml" />
+    <Content Include="Views\Watch\DeleteWatch.cshtml" />
+    <Content Include="Views\Cap\CapList.cshtml" />
+    <Content Include="Views\Cap\AddCap.cshtml" />
+    <Content Include="Views\Cap\EditCap.cshtml" />
+    <Content Include="Views\Cap\DeleteCap.cshtml" />
+    <Content Include="Views\Home\WatchList.cshtml" />
+    <Content Include="Views\Home\CapList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Views\Authentication\" />
-    <Folder Include="Views\Watch\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
