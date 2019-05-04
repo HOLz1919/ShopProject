@@ -6,8 +6,8 @@ using ShopProject.Models;
 
 namespace ShopProject.ViewModel
 {
-    public class WatchListVM
+    public class AddWatchVM
     {
-        public List<WatchVM> WatchVMList;
+        public Watch watch { get; set; }
     }
 }

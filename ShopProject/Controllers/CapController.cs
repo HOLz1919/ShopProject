@@ -11,33 +11,46 @@ namespace ShopProject.Controllers
 {
     public class CapController : Controller
     {
-        
         public ActionResult CapList()
         {
-            return View();
+            CapListVM capListVM = new BeltListVM();
+            CapBL capBL = new CapBL();
+            List<Cap> capList = new List<Cap>();
+            capListVM.CapVMList = CapList2CapVMList(capBL.GetCapList());
+
+            return View(capListVM);
         }
 
-        
+
         public ActionResult ShowPhotoCap(int id)
         {
             return View();
         }
 
-        
+
         public ActionResult AddCap()
         {
-            return View();
+            AddCapVM addBeltVM = new AddBeltVM();
+            return View(addBeltVM);
         }
 
-        
+
         [HttpPost]
-        public ActionResult AddCap(FormCollection collection)
+        public ActionResult AddCap(Belt belt)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (!ModelState.IsValid)
+                {
+                    return View("AddBelt", belt);
+                }
 
-                return RedirectToAction("Index");
+                else
+                {
+                    BeltBL beltBL = new BeltBL();
+                    beltBL.AddBelt(belt);
+                    return RedirectToAction("BeltList");
+                }
             }
             catch
             {
@@ -45,21 +58,24 @@ namespace ShopProject.Controllers
             }
         }
 
-        
-        public ActionResult EditCap(int id)
+        [HttpGet]
+        public ActionResult EditCap()
         {
+            Belt belt = new Belt();
             return View();
         }
 
-        
+
         [HttpPost]
-        public ActionResult EditCap(int id, FormCollection collection)
+        public ActionResult EditCap(Belt belt)
         {
+
             try
             {
-                // TODO: Add update logic here
+                BeltBL beltBL = new BeltBL();
+                beltBL.EditBelt(belt.BeltId, belt.Name, belt.Cost, belt.Description);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("BeltList");
             }
             catch
             {
@@ -67,27 +83,46 @@ namespace ShopProject.Controllers
             }
         }
 
-        
-        public ActionResult DeleteCap(int id)
+
+        public ActionResult DeleteCap()
         {
+
             return View();
         }
 
-        
+
         [HttpPost]
-        public ActionResult DeleteCap(int id, FormCollection collection)
+        public ActionResult DeleteCap(Belt belt)
         {
             try
             {
-                // TODO: Add delete logic here
+                BeltBL beltBL = new BeltBL();
+                beltBL.DeleteBelt(belt.BeltId);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("BeltList");
             }
             catch
             {
                 return View();
             }
         }
+
+
+
+        private List<CapVM> CapList2CapVMList(List<Cap> capList)
+        {
+            List<CapVM> CapVMList = new List<CapVM>();
+
+            foreach (Cap cap in capList)
+            {
+                CapVM capVM = new CapVM();
+                capVM.cap = cap;
+                CapVMList.Add(capVM);
+            }
+
+            return CapVMList;
+        }
+
 
 
 

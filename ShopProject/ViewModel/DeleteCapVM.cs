@@ -6,8 +6,8 @@ using ShopProject.Models;
 
 namespace ShopProject.ViewModel
 {
-    public class WatchListVM
+    public class DeleteCapVM
     {
-        public List<WatchVM> WatchVMList;
+        public Cap cap { get; set; }
     }
 }

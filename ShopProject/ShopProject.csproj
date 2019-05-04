@@ -179,13 +179,19 @@
     <Compile Include="Models\Watch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddBeltVM.cs" />
+    <Compile Include="ViewModel\AddCapVM.cs" />
+    <Compile Include="ViewModel\AddWatchVM.cs" />
     <Compile Include="ViewModel\BeltListVM.cs" />
     <Compile Include="ViewModel\BeltVM.cs" />
     <Compile Include="ViewModel\CapListVM.cs" />
     <Compile Include="ViewModel\CapVM.cs" />
     <Compile Include="ViewModel\CreateUserVM.cs" />
     <Compile Include="ViewModel\DeleteBeltVM.cs" />
+    <Compile Include="ViewModel\DeleteCapVM.cs" />
+    <Compile Include="ViewModel\DeleteWatchVM.cs" />
     <Compile Include="ViewModel\EditBeltVM.cs" />
+    <Compile Include="ViewModel\EditCapVM.cs" />
+    <Compile Include="ViewModel\EditWatchVM.cs" />
     <Compile Include="ViewModel\WatchListVM.cs" />
     <Compile Include="ViewModel\WatchVM.cs" />
   </ItemGroup>
