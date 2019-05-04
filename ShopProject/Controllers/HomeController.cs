@@ -53,7 +53,7 @@ namespace ShopProject.Controllers
 
         public ActionResult SchoppingCart()
         {
-
+            List<Object> ShoppingList = GetShoppingList();
 
 
             return View();
