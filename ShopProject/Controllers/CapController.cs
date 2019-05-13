@@ -48,6 +48,12 @@ namespace ShopProject.Controllers
                 else
                 {
                     CapBL capBL = new CapBL();
+                    HttpPostedFileBase file = Request.Files["imageFile"];
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        cap.ProductImage = file.FileName;
+                        file.SaveAs(HttpContext.Server.MapPath("~/Images/") + cap.ProductImage);
+                    }
                     capBL.AddCap(cap);
                     return RedirectToAction("CapList");
                 }
@@ -97,6 +103,7 @@ namespace ShopProject.Controllers
             try
             {
                 CapBL capBL = new CapBL();
+               
                 capBL.DeleteCap(cap.CapId);
 
                 return RedirectToAction("CapList");

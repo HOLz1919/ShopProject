@@ -6,22 +6,29 @@
 
 <h2>AddWatch</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddWatch", "Watch", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <table>
-        <tr>
-            <td>@Html.DisplayNameFor(model => Model.watch.Name)</td>
-            <td>@Html.EditorFor(model => Model.watch.Name)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => Model.watch.Cost)</td>
-            <td>@Html.EditorFor(model => Model.watch.Cost)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => Model.watch.Description)</td>
-            <td>@Html.EditorFor(model => Model.watch.Description)</td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(model => Model.watch.Name)</td>
+        <td>@Html.EditorFor(model => Model.watch.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => Model.watch.Cost)</td>
+        <td>@Html.EditorFor(model => Model.watch.Cost)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => Model.watch.Description)</td>
+        <td>@Html.EditorFor(model => Model.watch.Description)</td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="file" name="imageFile" size="23" accept="gif|jpg|png" />
+            @Html.ValidationMessageFor(model => model.watch.ProductImage)
+        </td>
+    </tr>
+</table>
 
 
     <div class="form-horizontal">

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ShopProject.Models
 {
-    public abstract class Product
+    public class Product
     {
         [Display(Name="Nazwa")]
         [Required(ErrorMessage ="Musisz podać nazwę!")]
@@ -21,7 +21,7 @@ namespace ShopProject.Models
         public virtual string Description { get; set; }
 
         [Display(Name="Zdjęcie")]
-        public byte[] ProductImage { get; set; }
+        public string ProductImage { get; set; }
 
 
     }

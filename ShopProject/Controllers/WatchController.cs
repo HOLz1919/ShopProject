@@ -48,6 +48,12 @@ namespace ShopProject.Controllers
                 else
                 {
                     WatchBL watchBL = new WatchBL();
+                    HttpPostedFileBase file = Request.Files["imageFile"];
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        watch.ProductImage = file.FileName;
+                        file.SaveAs(HttpContext.Server.MapPath("~/Images/") + watch.ProductImage);
+                    }
                     watchBL.AddWatch(watch);
                     return RedirectToAction("WatchList");
                 }

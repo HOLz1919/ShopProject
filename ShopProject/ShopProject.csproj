@@ -167,9 +167,13 @@
     <Compile Include="Handler.ashx.cs">
       <DependentUpon>Handler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905011312454_Migracja1.cs" />
-    <Compile Include="Migrations\201905011312454_Migracja1.Designer.cs">
-      <DependentUpon>201905011312454_Migracja1.cs</DependentUpon>
+    <Compile Include="Migrations\201905131533067_InitialCreate.cs" />
+    <Compile Include="Migrations\201905131533067_InitialCreate.Designer.cs">
+      <DependentUpon>201905131533067_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131538071_migracja1.cs" />
+    <Compile Include="Migrations\201905131538071_migracja1.Designer.cs">
+      <DependentUpon>201905131538071_migracja1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Belt.cs" />
@@ -192,6 +196,8 @@
     <Compile Include="ViewModel\EditBeltVM.cs" />
     <Compile Include="ViewModel\EditCapVM.cs" />
     <Compile Include="ViewModel\EditWatchVM.cs" />
+    <Compile Include="ViewModel\ProductVM.cs" />
+    <Compile Include="ViewModel\ShoppingCartListVM.cs" />
     <Compile Include="ViewModel\WatchListVM.cs" />
     <Compile Include="ViewModel\WatchVM.cs" />
   </ItemGroup>
@@ -245,6 +251,7 @@
     <Content Include="Views\Cap\DeleteCap.cshtml" />
     <Content Include="Views\Home\WatchList.cshtml" />
     <Content Include="Views\Home\CapList.cshtml" />
+    <Content Include="Views\Home\SchoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,8 +272,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905011312454_Migracja1.resx">
-      <DependentUpon>201905011312454_Migracja1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131533067_InitialCreate.resx">
+      <DependentUpon>201905131533067_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131538071_migracja1.resx">
+      <DependentUpon>201905131538071_migracja1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

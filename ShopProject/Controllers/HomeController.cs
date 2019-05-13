@@ -53,47 +53,83 @@ namespace ShopProject.Controllers
 
         public ActionResult SchoppingCart()
         {
-            List<Object> ShoppingList = GetShoppingList();
+            List<Product> ShoppingList = GetShoppingList();
 
 
             return View();
         }
 
-
-        public List<Object> GetShoppingList()
+        
+        public ActionResult AddBelt(Belt belt)
         {
-            List<Object> shoppingList;
+            Product product = new Product();
+            product.Name = belt.Name;
+            product.Cost = belt.Cost;
+            product.Description = belt.Description;
+            product.ProductImage = belt.ProductImage;
+
+            return RedirectToAction("AddItem", product);
+        }
+
+        
+        public ActionResult AddItem(Product p)
+        {
+            List<Product> ShoppingList = GetShoppingList();
+            ShoppingList.Add(p);
+            SaveShoppingList(ShoppingList);
+
+            return RedirectToAction("SchoppingCart");
+        }
+
+
+        public List<Product> GetShoppingList()
+        {
+            List<Product> shoppingList;
             if (Session["ShoppingList"] == null)
             {
-                shoppingList = new List<Object>();
+                shoppingList = new List<Product>();
 
             }
             else
             {
-                shoppingList = (List<Object>)Session["ShoppingList"];
+                shoppingList = (List<Product>)Session["ShoppingList"];
             }
             return shoppingList;
         }
 
-        public void SaveShoppingList(List<Object> shoppingList)
+        public void SaveShoppingList(List<Product> shoppingList)
         {
             Session["ShoppingList"] = shoppingList;
         }
 
-        public void AddItem(Object o)
+        //public void AddItem(Product p)
+        //{
+        //    List<Product> shoppingList = GetShoppingList();
+        //    shoppingList.Add(p);
+        //    SaveShoppingList(shoppingList);
+        //}
+
+        public void RemoveItem(Product p)
         {
-            List<Object> shoppingList = GetShoppingList();
-            shoppingList.Add(o);
+            List<Product> shoppingList = GetShoppingList();
+            shoppingList.Remove(p);
             SaveShoppingList(shoppingList);
         }
 
-        public void RemoveItem(Object o)
-        {
-            List<Object> shoppingList = GetShoppingList();
-            shoppingList.Remove(o);
-            SaveShoppingList(shoppingList);
-        }
 
+        //private List<ProductVM> ProductList2ProductVMList(List<Product> productList)
+        //{
+        //    List<ProductVM> ProductVMList = new List<ProductVM>();
+
+        //    foreach (Product product in productList)
+        //    {
+        //        ProductVM productVM = new ProductVM();
+        //        productVM.product = product;
+        //        ProductVMList.Add(productVM);
+        //    }
+
+        //    return ProductVMList;
+        //}
 
         //--------------------------------------------
 

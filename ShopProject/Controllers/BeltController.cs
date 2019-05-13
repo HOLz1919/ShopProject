@@ -49,12 +49,20 @@ namespace ShopProject.Controllers
                 else
                 {
                     BeltBL beltBL = new BeltBL();
+                    HttpPostedFileBase file = Request.Files["imageFile"];
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        belt.ProductImage = file.FileName;
+                        file.SaveAs(HttpContext.Server.MapPath("../Images/") + belt.ProductImage);
+                    }
+
                     beltBL.AddBelt(belt);
                     return RedirectToAction("BeltList");
                 }
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 return View();
             }
         }
