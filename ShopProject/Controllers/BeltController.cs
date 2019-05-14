@@ -9,6 +9,7 @@ using ShopProject.BL;
 
 namespace ShopProject.Controllers
 {
+    [Authorize]
     public class BeltController : Controller
     {
         // GET: Belt

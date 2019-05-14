@@ -53,10 +53,12 @@ namespace ShopProject.Controllers
 
         public ActionResult SchoppingCart()
         {
+            List<ProductVM> ShoppingListVM = new List<ProductVM>();
             List<Product> ShoppingList = GetShoppingList();
+            ShoppingListVM = ProductList2ProductVMList(ShoppingList);
 
 
-            return View();
+            return View(ShoppingListVM);
         }
 
         
@@ -74,8 +76,10 @@ namespace ShopProject.Controllers
         
         public ActionResult AddItem(Product p)
         {
+            List<ProductVM> ShoppingListVM = new List<ProductVM>();
             List<Product> ShoppingList = GetShoppingList();
             ShoppingList.Add(p);
+            ShoppingListVM = ProductList2ProductVMList(ShoppingList);
             SaveShoppingList(ShoppingList);
 
             return RedirectToAction("SchoppingCart");
@@ -117,19 +121,19 @@ namespace ShopProject.Controllers
         }
 
 
-        //private List<ProductVM> ProductList2ProductVMList(List<Product> productList)
-        //{
-        //    List<ProductVM> ProductVMList = new List<ProductVM>();
+        private List<ProductVM> ProductList2ProductVMList(List<Product> productList)
+        {
+            List<ProductVM> ProductVMList = new List<ProductVM>();
 
-        //    foreach (Product product in productList)
-        //    {
-        //        ProductVM productVM = new ProductVM();
-        //        productVM.product = product;
-        //        ProductVMList.Add(productVM);
-        //    }
+            foreach (Product product in productList)
+            {
+                ProductVM productVM = new ProductVM();
+                productVM.product = product;
+                ProductVMList.Add(productVM);
+            }
 
-        //    return ProductVMList;
-        //}
+            return ProductVMList;
+        }
 
         //--------------------------------------------
 

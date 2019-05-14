@@ -6,10 +6,8 @@ using ShopProject.Models;
 
 namespace ShopProject.ViewModel
 {
-    public class ProductVM
+    public class RegistrationVM
     {
-        public Product product;
-
-       
+        public User user { get; set; }
     }
 }

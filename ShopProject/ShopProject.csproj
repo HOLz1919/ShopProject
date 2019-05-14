@@ -196,18 +196,18 @@
     <Compile Include="ViewModel\EditBeltVM.cs" />
     <Compile Include="ViewModel\EditCapVM.cs" />
     <Compile Include="ViewModel\EditWatchVM.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />
+    <Compile Include="ViewModel\RegistrationVM.cs" />
     <Compile Include="ViewModel\ShoppingCartListVM.cs" />
     <Compile Include="ViewModel\WatchListVM.cs" />
     <Compile Include="ViewModel\WatchVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\MyStyle.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -252,11 +252,12 @@
     <Content Include="Views\Home\WatchList.cshtml" />
     <Content Include="Views\Home\CapList.cshtml" />
     <Content Include="Views\Home\SchoppingCart.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Authentication\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

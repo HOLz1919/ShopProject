@@ -1,0 +1,47 @@
+﻿@model ShopProject.ViewModel.LoginVM
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+
+
+
+    <h4>Logowanie do systemu</h4>
+    <hr />
+
+    <p style="color:red;">
+        @Html.ValidationMessage("CredentialError")
+    </p>
+    <table>
+
+        <tr>
+            <td style="text-align: right;">
+                @Html.DisplayNameFor(model => model.user.Username):
+            </td>
+            <td>
+                @Html.EditorFor(model => model.user.Username)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align: right;">
+                @Html.DisplayNameFor(model => model.user.Password):
+            </td>
+            <td>
+                @Html.PasswordFor(model => model.user.Password)
+            </td>
+        </tr>
+
+    </table>
+    <br />
+
+    <input type="submit" value="Zaloguj" />
+
+
+
+}
