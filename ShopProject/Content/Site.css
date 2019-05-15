@@ -63,3 +63,24 @@ tr td:hover {
     color: #FFF;
 }
 /* Hover cell effect! */
+
+.creator {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.miniContainer {
+    margin: auto;
+    text-align: center;
+}
+
+.selectProductList {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    float: left;
+}
+
+#first {
+    margin-left: 160px;
+}

@@ -8,7 +8,9 @@
 
 
 
-<div>@Html.ActionLink("Dodaj Pasek", "AddWatch")</div>
+<div class="creator">
+    <input type="button" class="btn btn-info" value="Dodaj Zegarek" onclick="location.href='@Url.Action("AddWatch", "Watch")'" />
+</div>
 <div>
     <table>
         <tr>
@@ -35,4 +37,16 @@
         }
 
     </table>
+
+    <div class="miniContainer">
+        <div class="selectProductList" id="first">
+            <input type="button" class="btn btn-info" value="Paski" onclick="location.href='@Url.Action("BeltList", "Belt")'" />
+        </div>
+        <div class="selectProductList">
+            <input type="button" class="btn btn-info" value="Czapki" onclick="location.href='@Url.Action("CapList", "Cap")'" />
+        </div>
+        <div class="selectProductList">
+            <input type="button" class="btn btn-info" value="Zegarki" onclick="location.href='@Url.Action("WatchList", "Watch")'" />
+        </div>
+    </div>
 </div>

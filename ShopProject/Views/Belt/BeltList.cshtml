@@ -9,7 +9,9 @@
 
 
 
-<div>@Html.ActionLink("Dodaj Pasek","AddBelt")</div>
+<div class="creator">
+    <input type="button" class="btn btn-info" value="Dodaj Pasek" onclick="location.href='@Url.Action("AddBelt", "Belt")'" />
+</div>
 <div>
     <table>
         <tr>
@@ -24,16 +26,29 @@
 
 
         @foreach (BeltVM item in Model.BeltVMList)
-         {
-        <tr>
-            <td>@item.belt.BeltId</td>
-            <td>@item.belt.Name</td>
-            <td>@item.belt.Cost</td>
-            <td>@item.belt.Description</td>
-            <td>@Html.ActionLink("Edytuj", "EditBelt", item.belt)</td>
-            <td>@Html.ActionLink("Usuń", "DeleteBelt", item.belt)</td>
-        </tr>
-         }
+        {
+            <tr>
+                <td>@item.belt.BeltId</td>
+                <td>@item.belt.Name</td>
+                <td>@item.belt.Cost</td>
+                <td>@item.belt.Description</td>
+                <td>@Html.ActionLink("Edytuj", "EditBelt", item.belt)</td>
+                <td>@Html.ActionLink("Usuń", "DeleteBelt", item.belt)</td>
+            </tr>
+        }
     </table>
+
+    <div class="miniContainer">
+        <div class="selectProductList" id="first">
+            <input type="button" class="btn btn-info" value="Paski" onclick="location.href='@Url.Action("BeltList", "Belt")'" />
+        </div>
+        <div class="selectProductList">
+            <input type="button" class="btn btn-info" value="Czapki" onclick="location.href='@Url.Action("CapList", "Cap")'" />
+        </div>
+        <div class="selectProductList">
+            <input type="button" class="btn btn-info" value="Zegarki" onclick="location.href='@Url.Action("WatchList", "Watch")'" />
+        </div>
+    </div>
+
 </div>
 
