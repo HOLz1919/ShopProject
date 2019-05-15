@@ -91,14 +91,14 @@ namespace ShopProject.Controllers
         }
 
 
-        public ActionResult DeleteCap()
-        {
+        //public ActionResult DeleteCap()
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
 
 
-        [HttpPost]
+        //[HttpPost]
         public ActionResult DeleteCap(Cap cap)
         {
             try

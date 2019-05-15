@@ -94,14 +94,14 @@ namespace ShopProject.Controllers
         }
 
 
-        public ActionResult DeleteBelt()
-        {
+        //public ActionResult DeleteBelt()
+        //{
             
-            return View();
-        }
+        //    return View();
+        //}
 
 
-        [HttpPost]
+        //[HttpPost]
         public ActionResult DeleteBelt(Belt belt)
         {
             try

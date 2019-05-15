@@ -90,14 +90,14 @@ namespace ShopProject.Controllers
             }
         }
 
-        public ActionResult DeleteWatch()
-        {
+        //public ActionResult DeleteWatch()
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
 
 
-        [HttpPost]
+        //[HttpPost]
         public ActionResult DeleteWatch(Watch watch)
         {
             try
