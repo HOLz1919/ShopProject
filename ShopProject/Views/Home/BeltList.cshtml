@@ -7,7 +7,7 @@
 }
 
 
-
+<h2>Paski</h2>
 
 @foreach (BeltVM item in Model.BeltVMList)
 {
@@ -22,3 +22,6 @@
 }
 
    
+<div style="clear: both; padding-top:40px;">
+    <input type="button" class="btn btn-info" value="Panel Administracyjny" onclick="location.href='@Url.Action("BeltList", "Belt")'" />
+</div>

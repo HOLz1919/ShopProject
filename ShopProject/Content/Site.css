@@ -84,3 +84,9 @@ tr td:hover {
 #first {
     margin-left: 160px;
 }
+
+.login {
+    text-align: right;
+    margin-top:20px;
+    margin-bottom:10px;
+}

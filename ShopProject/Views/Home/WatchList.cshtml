@@ -6,6 +6,7 @@
     ViewBag.Title = "WatchList";
 }
 
+<h2>Zegarki</h2>
 
 @foreach (WatchVM item in Model.WatchVMList)
 {
@@ -18,3 +19,7 @@
 </div>
 
 }
+
+<div style="clear: both; padding-top:40px;">
+    <input type="button" class="btn btn-info" value="Panel Administracyjny" onclick="location.href='@Url.Action("BeltList", "Belt")'" />
+</div>

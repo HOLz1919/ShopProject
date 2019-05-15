@@ -24,7 +24,7 @@
 
     <tr>
         <td>
-            <input type="file" name="imageFile" size="23" accept="gif|jpg|png" />
+           <input type="file" name="imageFile" size="23" accept="gif|jpg|png" />
             @Html.ValidationMessageFor(model => model.watch.ProductImage)
         </td>
     </tr>
@@ -37,7 +37,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="button" class="btn btn-info" value="Powróć" onclick="location.href='@Url.Action("WatchList", "Watch")'" />  <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

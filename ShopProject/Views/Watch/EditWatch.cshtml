@@ -4,7 +4,7 @@
     ViewBag.Title = "EditWatch";
 }
 
-<h2>EditWatch</h2>
+<h2>Edytuj Zegarek</h2>
 
 @using (Html.BeginForm())
 {
@@ -30,7 +30,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Edytuj" class="btn btn-default" />
+                <input type="button" class="btn btn-info" value="Powróć" onclick="location.href='@Url.Action("WatchList", "Watch")'" />   <input type="submit" value="Edytuj" class="btn btn-default" />
             </div>
         </div>
     </div>

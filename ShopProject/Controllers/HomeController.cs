@@ -51,6 +51,7 @@ namespace ShopProject.Controllers
 
         // Koszyk ----------------------------------------------
 
+        [Authorize]
         public ActionResult SchoppingCart()
         {
             List<ProductVM> ShoppingListVM = new List<ProductVM>();
@@ -61,7 +62,7 @@ namespace ShopProject.Controllers
             return View(ShoppingListVM);
         }
 
-        
+        [Authorize]
         public ActionResult AddBelt(Belt belt)
         {
             Product product = new Product();
