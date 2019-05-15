@@ -9,7 +9,7 @@
 
 
 
-
+<div>@Html.ActionLink("Dodaj Pasek","AddBelt")</div>
 <div>
     <table>
         <tr>
@@ -24,7 +24,7 @@
 
 
         @foreach (BeltVM item in Model.BeltVMList)
-        {
+         {
         <tr>
             <td>@item.belt.BeltId</td>
             <td>@item.belt.Name</td>
@@ -33,8 +33,7 @@
             <td>@Html.ActionLink("Edytuj", "EditBelt", item.belt)</td>
             <td>@Html.ActionLink("Usuń", "DeleteBelt", item.belt)</td>
         </tr>
-}
-
+         }
     </table>
 </div>
 
