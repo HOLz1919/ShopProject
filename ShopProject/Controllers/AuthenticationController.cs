@@ -24,6 +24,7 @@ namespace ShopProject.Controllers
             UserBL userBL = new UserBL();
             if (userBL.IsValidUser(user.Username, user.Password))
             {
+                Session["User"] = new User { Username = user.Username };
                 FormsAuthentication.SetAuthCookie(user.Username, false);
                 if (ReturnUrl == null)
                 {
@@ -59,13 +60,17 @@ namespace ShopProject.Controllers
             { 
             UserBL userBL = new UserBL();
             userBL.CreateUser(user);
-            return RedirectToAction("List", "User");
+            return RedirectToAction("BeltList", "Home");
             }
         }
 
         public ActionResult Logout()
         {
-            return RedirectToAction("Login");
+            Session.Clear();
+            Session.Abandon();
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("BeltList", "Home");
         }
     }
 }
